@@ -1,0 +1,1 @@
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Strada.Net461App.WebApiApplication" Language="C#" %>
