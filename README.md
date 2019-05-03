@@ -71,9 +71,13 @@ Errors are handled implicitly, so that the your application process flow is not 
 > `Exception`, *Exception*
 
 > *The `Exception` instance that raised the event*
-##### `Agent.Instance.ClearCacheFailed`
-> The cache could not be cleared manually
+##### `Agent.Instance.GetEventMetadataPayloadBatchFailed`
+> Unable to prepare the event batch for publishing to Google cloud
 > ###### Parameters
+> `NumEventsCached`, *int*
+
+> *The number of events remaining in the cache*
+
 > `Exception`, *Exception*
 
 > *The `Exception` instance that raised the event*
@@ -89,32 +93,12 @@ Errors are handled implicitly, so that the your application process flow is not 
 > `Exception`, *Exception*
 
 > *The `Exception` instance that raised the event*
-##### `Agent.Instance.GetEventMetadataPayloadBatchFailed`
-> Unable to prepare the event batch for publishing to Google cloud
-> ###### Parameters
-> `NumEventsCached`, *int*
-
-> *The number of events remaining in the cache*
-
-> `Exception`, *Exception*
-
-> *The `Exception` instance that raised the event*
-##### `Agent.Instance.InitialisationFailed`
-> The event transmission service could not be started
+##### `Agent.Instance.ClearCacheFailed`
+> The cache could not be cleared manually
 > ###### Parameters
 > `Exception`, *Exception*
 
 > *The `Exception` instance that raised the event*
-##### `Agent.Instance.GotEventMetadataPayloadBatch`
-> A batch of events has been removed from the cache
-> ###### Parameters
-> `NumItemsReturned`, *int*
-
-> *The number of items removed from the cache*
-
-> `NumEventsCached`, *int*
-
-> *The number of items remaining in the cache*
 ### Subscribing to Notifications
 Your application can subscribe to any successful operation
 ##### `Agent.Instance.EventMetaAdded`
@@ -123,12 +107,6 @@ Your application can subscribe to any successful operation
 > `EventMeta`, *object*
 
 > *The event that has been added to the cache*
-##### `Agent.Instance.DataTransmitted`
-> A batch of events has been transmitted to the Botworks Cloud
-> ###### Parameters
-> `NumItemsTransmitted`, *int*
-
-> *The number of events transmitted in the batch*
 ##### `Agent.Instance.GotEventMetadataPayloadBatch`
 > A batch of events has been removed from the cache
 > ###### Parameters
@@ -139,3 +117,9 @@ Your application can subscribe to any successful operation
 > `NumEventsCached`, *int*
 
 > *The number of items remaining in the cache*
+##### `Agent.Instance.DataTransmitted`
+> A batch of events has been transmitted to Google Cloud
+> ###### Parameters
+> `NumItemsTransmitted`, *int*
+
+> *The number of events transmitted in the batch*
